@@ -17,7 +17,8 @@ export async function POST(request: Request) {
       contentType: 'text/plain',
     });
 
-    const rawUrl = `https://${process.env.VERCEL_URL || 'localhost:3000'}/api/raw/${id}`;
+    // Прямая ссылка на файл в Blob — это и есть raw
+    const rawUrl = blob.url;
 
     return NextResponse.json({
       id,
